@@ -72,6 +72,15 @@ export default function MovieDetails({
     },
     [selectedId]
   );
+
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = `MOVIE | ${title}`;
+    },
+    [title]
+  );
+
   return (
     <div className="details">
       {isLoading && <Loader />}
