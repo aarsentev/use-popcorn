@@ -22,7 +22,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
-  const [selectedId, setSelectedId] = useState("tt1375666");
+  const [selectedId, setSelectedId] = useState("");
 
   function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
@@ -68,6 +68,7 @@ export default function App() {
       setError("");
       return;
     }
+    handleCloseMovie();
     fetchMovies();
 
     return function () {
