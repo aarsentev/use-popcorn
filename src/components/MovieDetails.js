@@ -76,7 +76,11 @@ export default function MovieDetails({
   useEffect(
     function () {
       if (!title) return;
-      document.title = `MOVIE | ${title}`;
+      document.title = `Movie | ${title}`;
+
+      return function () {
+        document.title = "usePopcorn";
+      };
     },
     [title]
   );
